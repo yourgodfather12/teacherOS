@@ -14,6 +14,9 @@ import LessonPlanner from "./pages/LessonPlanner";
 import Gradebook from "./pages/Gradebook";
 import Attendance from "./pages/Attendance";
 import Messages from "./pages/Messages";
+import AIAnalytics from "./pages/AIAnalytics";
+import LiveEngagement from "./pages/LiveEngagement";
+import ParentInsights from "./pages/ParentInsights";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,7 +35,10 @@ const App = () => (
           <Route path="/teacher/gradebook" element={<Gradebook />} />
           <Route path="/teacher/attendance" element={<Attendance />} />
           <Route path="/teacher/messages" element={<Messages />} />
+          <Route path="/teacher/ai-analytics" element={<AIAnalytics />} />
+          <Route path="/teacher/live-engagement" element={<LiveEngagement />} />
           <Route path="/parent" element={<ParentDashboard />} />
+          <Route path="/parent/insights" element={<ParentInsights />} />
           <Route path="/student" element={<StudentDashboard />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="*" element={<NotFound />} />
