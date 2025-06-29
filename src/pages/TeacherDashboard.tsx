@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const TeacherDashboard = () => {
   return (
@@ -34,58 +35,72 @@ const TeacherDashboard = () => {
 
         {/* Main Tiles */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-lg">📅 Today's Schedule</CardTitle>
-              <CardDescription>5 classes scheduled</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-blue-600">Next: Math 9A</div>
-              <div className="text-sm text-gray-600">Room 201 • 10:30 AM</div>
-            </CardContent>
-          </Card>
+          <Link to="/teacher/lessons">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">📅 AI Lesson Planner</CardTitle>
+                <CardDescription>Create personalized lessons</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold text-blue-600">Generate</div>
+                <div className="text-sm text-gray-600">Differentiated lesson plans</div>
+              </CardContent>
+            </Card>
+          </Link>
 
-          <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-lg">✅ Assignments</CardTitle>
-              <CardDescription>Grading status</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-orange-600">12 Pending</div>
-              <div className="text-sm text-gray-600">3 overdue submissions</div>
-            </CardContent>
-          </Card>
+          <Link to="/teacher/gradebook">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">📊 Gradebook</CardTitle>
+                <CardDescription>Track student progress</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold text-green-600">B+</div>
+                <div className="text-sm text-gray-600">Class average</div>
+              </CardContent>
+            </Card>
+          </Link>
 
-          <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-lg">🟢 Attendance</CardTitle>
-              <CardDescription>Quick mark</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-green-600">92%</div>
-              <div className="text-sm text-gray-600">Average this week</div>
-            </CardContent>
-          </Card>
+          <Link to="/teacher/attendance">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">🟢 Attendance</CardTitle>
+                <CardDescription>Quick daily check-in</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold text-blue-600">92%</div>
+                <div className="text-sm text-gray-600">Present today</div>
+              </CardContent>
+            </Card>
+          </Link>
 
-          <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-lg">📊 Class Snapshot</CardTitle>
-              <CardDescription>Performance overview</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-purple-600">B+</div>
-              <div className="text-sm text-gray-600">Class average</div>
-            </CardContent>
-          </Card>
+          <Link to="/teacher/messages">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">💬 Messages</CardTitle>
+                <CardDescription>Parent communication</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold text-purple-600">3</div>
+                <div className="text-sm text-gray-600">New messages</div>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
 
         {/* Quick Actions */}
         <div className="mb-8">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
           <div className="flex flex-wrap gap-3">
-            <Button className="bg-blue-600 hover:bg-blue-700">+ New Lesson</Button>
-            <Button variant="outline">Mark Attendance</Button>
-            <Button variant="outline">Send Message</Button>
+            <Link to="/teacher/lessons">
+              <Button className="bg-blue-600 hover:bg-blue-700">+ New Lesson</Button>
+            </Link>
+            <Link to="/teacher/attendance">
+              <Button variant="outline">Mark Attendance</Button>
+            </Link>
+            <Link to="/teacher/messages">
+              <Button variant="outline">Send Message</Button>
+            </Link>
             <Button variant="outline">Create Assignment</Button>
           </div>
         </div>
